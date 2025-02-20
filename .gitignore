@@ -1,0 +1,44 @@
+# Maven Generated Files
+dependency-maven-plugin-markers/
+target
+
+# Maven Wrapper
+/.mvn/
+mvnw
+mvnw.cmd
+
+# Local Configuration Files
+/.settings/
+pom.xml.releaseBackup
+release.properties
+*.releaseBackup
+
+# IDE Files (if applicable)
+/.idea/              # IntelliJ IDEA
+*.iml                # IntelliJ module files
+*.ipr                # IntelliJ project files
+*.iws                # IntelliJ workspace files
+/.classpath          # Eclipse
+/.project            # Eclipse
+/.factorypath        # Eclipse
+
+# Logs
+*.log
+logs/
+
+# Temporary Files
+*.tmp
+*.bak
+*.swp
+*~
+
+# OS Generated Files
+.DS_Store           # macOS
+Thumbs.db           # Windows
+
+# Optional: Ignore local input/output directories if they're for testing
+/src/main/resources/output/
+
+.vscode
+
+output
