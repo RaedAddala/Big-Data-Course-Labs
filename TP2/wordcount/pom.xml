@@ -12,11 +12,22 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_2.13</artifactId>
             <version>3.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-network-common_2.13</artifactId>
+            <version>3.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>3.3.6</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -28,8 +39,7 @@
 
     <build>
         <plugins>
-            <!-- Maven Assembly Plugin for creating JAR with dependencies -->
-            <!-- <plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.6.0</version>
@@ -52,7 +62,8 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin> -->
+            </plugin>
+
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
