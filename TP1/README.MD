@@ -2,7 +2,7 @@
 
 You can find [here](https://insatunisia.github.io/TP-BigData/tp1/) the Lab's Page.
 
-Using Windows and VSCode I encountered some problems, so I used commands rather than relying on the extensions or VSCode itself when it comes to building the code.
+Using Windows and VSCode I encountered some problems, so I used commands rather than relying on the extensions or VSCode itself when it comes to building the code. This makes it applied to other platforms and text editors or IDEs.
 
 ## Prerequesites
 

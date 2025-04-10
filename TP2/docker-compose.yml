@@ -1,0 +1,40 @@
+services:
+  hadoop-master:
+    image: liliasfaxi/hadoop-cluster:latest
+    container_name: hadoop-master
+    hostname: hadoop-master
+    networks:
+      - hadoop
+    ports:
+      - "9870:9870"
+      - "8088:8088"
+      - "7077:7077" 
+      - "16010:16010"
+    tty: true
+    stdin_open: true
+
+  hadoop-worker1:
+    image: liliasfaxi/hadoop-cluster:latest
+    container_name: hadoop-worker1
+    hostname: hadoop-worker1
+    networks:
+      - hadoop
+    ports:
+      - "8040:8042"
+    tty: true
+    stdin_open: true
+
+  hadoop-worker2:
+    image: liliasfaxi/hadoop-cluster:latest
+    container_name: hadoop-worker2
+    hostname: hadoop-worker2
+    networks:
+      - hadoop
+    ports:
+      - "8041:8042" 
+    tty: true
+    stdin_open: true
+
+networks:
+  hadoop:
+    driver: bridge
