@@ -7,7 +7,7 @@ Using Windows and VSCode I encountered some problems, so I used commands rather 
 ## Prerequesites
 
 - Maven.
-- Java 8 (new versions are incompatible with Hadoop, I guess the newest version supported is Java 17).
+- Java 8 (new versions are incompatible with Hadoop, I guess the latest version supported is Java 17).
 - Docker.
 - You would need to install **hadoop windows** for ***Local Testing***: files included are *winutils.exe*, *hadoop.dll* and *hdfs.dll*. You can find these [here](https://github.com/cdarlint/winutils).
 
