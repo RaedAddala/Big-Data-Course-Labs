@@ -28,6 +28,8 @@ Running ***Apache Spark*** on ***Hadoop Yarn***.
 
 ## Lab Work
 
+Setup and run spark:
+
 1. Attach a shell in the Master Node Container in Docker.
 2. Create a `file1.txt`.
 3. Run this command `hadoop fs -mkdir -p .` to add the current folder to **HDFS**.
@@ -35,3 +37,7 @@ Running ***Apache Spark*** on ***Hadoop Yarn***.
 5. Use `spark-shell` to open a shell that you can provide the scala code in `count.scala`.
 6. After running this code you should get the files from **HDFS** using this command: `hdfs dfs -get file1.count`.
 7. Then read the results.
+
+Use Spark Transformations with Scala:
+
+1. Use `spark-shell` to open a shell that you can provide the scala code in `countBasedOnTransformations.scala`.
