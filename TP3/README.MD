@@ -41,18 +41,10 @@ This text is written in french. So here is what it means:
 
 **NOTE2:** Downloading a good Java 8 in windows feels like a hustle so after many trials here is the best one: Installers provided by [Adoptium](https://adoptium.net/fr/temurin/releases/?package=jdk&version=8&os=windows&arch=x64).
 
-## Lab Work
+## How to run each one of the servers
 
-Setup and run spark:
+I setted up the `pom.xml` so you can run the three main functions without changing the file.
 
-1. Attach a shell in the Master Node Container in Docker.
-2. Create a `file1.txt`.
-3. Run this command `hadoop fs -mkdir -p .` to add the current folder to **HDFS**.
-4. Run this command `hdfs dfs -put file1.txt` to add the file to **HDFS**.
-5. Use `spark-shell` to open a shell that you can provide the scala code in `count.scala`.
-6. After running this code you should get the files from **HDFS** using this command: `hdfs dfs -get file1.count`.
-7. Then read the results.
-
-Use Spark Transformations with Scala:
-
-1. Use `spark-shell` to open a shell that you can provide the scala code in `countBasedOnTransformations.scala`.
+- Run SparkKafkaWordCount `mvn exec:java -Pwordcount`.
+- Run SimpleProducer `mvn exec:java -Pproducer`
+- Run SimpleConsumer `mvn exec:java -Pconsumer`.

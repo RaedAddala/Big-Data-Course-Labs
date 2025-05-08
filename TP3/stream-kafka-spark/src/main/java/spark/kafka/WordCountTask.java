@@ -1,4 +1,4 @@
-package spark.batch.tp21;
+package spark.kafka;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
