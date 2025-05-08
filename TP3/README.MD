@@ -1,24 +1,38 @@
-# Lab 2: Batch, Micro-Batch, Streaming Processing with Apache Spark
+# Lab 3: Data Ingestion using MoM Apache Kafka
 
-You can find [here](https://insatunisia.github.io/TP-BigData/tp2/) the Lab's Page.
+You can find [here](https://insatunisia.github.io/TP-BigData/tp3/) the Lab's Page.
 
 Using Windows and VSCode I encountered some problems, so I used commands rather than relying on the extensions or VSCode itself when it comes to building the code. This makes it applied to other platforms and text editors or IDEs.
 
 ## Lab Objective
 
-Running ***Apache Spark*** on ***Hadoop Yarn***.
+Running ***Apache Kafka with Zookeeper*** for **data ingestion** and integrating them with ***Apache Spark***.
 
 ### Explaining briefly the terms
 
-- **Apache Spark:** Apache Spark is an open-source framework for big data processing, excelling in speed by using in-memory computation instead of disk-based approaches like Hadoop MapReduce. It provides a unified engine for batch processing, real-time streaming, machine learning, and SQL queries, scalable across clusters with APIs in multiple languages.
-- **Hadoop Yarn:** Hadoop YARN is the resource management layer of Hadoop, introduced to efficiently allocate CPU and memory across a cluster for various applications. It splits duties between the ResourceManager, which oversees the entire cluster, and NodeManagers, which handle tasks and resources on individual nodes.
+- **Apache Kafka:**.
+- **Apache Spark:**.
+- **Apache Zookeeper:**.
+
+**Here is a Kafka Setup example**:
+![An example of Kafka](kafkaFlow.png).
+
+**Here is the architecture with Zookeeper on consideration:**
+![Zookeeper context](Zookeeper.png).
+This text is written in french. So here is what it means:
+
+1. Ask for the Kafka Broker's adress.
+2. Send the data in streaming.
+3. Find the messages.
+4. Update the offsets.
 
 ## Prerequesites
 
+- Apache Zookeeper (found in Docker ) version .
+- Apache Kafka ( found in Docker ) version .
 - Apache Spark ( found in Docker ) version 3.5.
 - Apache Hadoop ( found in Docker ) version 3.3.6.
 - Maven.
-- Scala 3.
 - Java 8 (new versions are incompatible with Hadoop, I guess the latest version supported is Java 17).
 - Docker.
 - You would need to install **hadoop windows** for ***Local Testing***: files included are *winutils.exe*, *hadoop.dll* and *hdfs.dll*. You can find these [here](https://github.com/cdarlint/winutils).

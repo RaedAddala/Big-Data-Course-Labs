@@ -19,3 +19,11 @@ You can find:
 - The Lab's Page [here](https://insatunisia.github.io/TP-BigData/tp2/).
 - The Lab's Readme [here](./TP2/README.MD).
 - The Lab's Results [here](./TP2/LabResults.md)
+
+## Lab 3: Data Ingestion using MoM Apache Kafka
+
+You can find:
+
+- The Lab's Page [here](https://insatunisia.github.io/TP-BigData/tp3/).
+- The Lab's Readme [here](./TP3/README.MD).
+- The Lab's Results [here](./TP3/LabResults.md)
