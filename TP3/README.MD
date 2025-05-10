@@ -10,9 +10,10 @@ Running ***Apache Kafka with Zookeeper*** for **data ingestion** and integrating
 
 ### Explaining briefly the terms
 
-- **Apache Kafka:**.
-- **Apache Spark:**.
-- **Apache Zookeeper:**.
+- **Apache Kafka:** Apache Kafka is an open-source distributed streaming platform designed for high-throughput, fault-tolerant, real-time data processing. It enables the publishing, subscribing, storing, and processing of data streams in a scalable manner, commonly used for event-driven architectures and log aggregation.
+- **Apache Zookeeper:** Apache ZooKeeper is an open-source, distributed coordination service for managing large-scale systems. It provides a centralized infrastructure for configuration management, naming, synchronization, and group services, ensuring reliable communication and consistency across distributed applications.
+- **Apache Spark:** Apache Spark is an open-source framework for big data processing, excelling in speed by using in-memory computation instead of disk-based approaches like Hadoop MapReduce. It provides a unified engine for batch processing, real-time streaming, machine learning, and SQL queries, scalable across clusters with APIs in multiple languages.
+- **Hadoop Yarn:** Hadoop YARN is the resource management layer of Hadoop, introduced to efficiently allocate CPU and memory across a cluster for various applications. It splits duties between the ResourceManager, which oversees the entire cluster, and NodeManagers, which handle tasks and resources on individual nodes.
 
 **Here is a Kafka Setup example**:
 ![An example of Kafka](kafkaFlow.png).
