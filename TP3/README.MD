@@ -28,8 +28,8 @@ This text is written in french. So here is what it means:
 
 ## Prerequesites
 
-- Apache Zookeeper (found in Docker ) version .
-- Apache Kafka ( found in Docker ) version .
+- Apache Zookeeper (found in Docker ) version 3.8.3.
+- Apache Kafka ( found in Docker ) version 3.6.1.
 - Apache Spark ( found in Docker ) version 3.5.
 - Apache Hadoop ( found in Docker ) version 3.3.6.
 - Maven.
@@ -46,5 +46,9 @@ This text is written in french. So here is what it means:
 I setted up the `pom.xml` so you can run the three main functions without changing the file.
 
 - Run SparkKafkaWordCount `mvn exec:java -Pwordcount`.
-- Run SimpleProducer `mvn exec:java -Pproducer`
+- Run SimpleProducer `mvn exec:java -Pproducer -Dtopic=Hello-Kafka`
 - Run SimpleConsumer `mvn exec:java -Pconsumer`.
+
+## Lab Tips
+
+To troubleshoot problems there are some scripts that can help you out. For example: `kafka-broker-api-versions.sh --bootstrap-server localhost:9092`.

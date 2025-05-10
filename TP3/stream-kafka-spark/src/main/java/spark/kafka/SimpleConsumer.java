@@ -14,35 +14,36 @@ public class SimpleConsumer {
             System.out.println("Entrer le nom du topic");
             return;
         }
-        String topicName = args[0].toString();
-        Properties props = new Properties();
 
-        props.put("bootstrap.servers", "localhost:9092");
+        String topicName = args[0];
+        System.out.println("Topic: " + topicName);
+
+        Properties props = new Properties();
+        props.put("bootstrap.servers", "localhost:9092,localhost:9093,localhost:9094");
         props.put("group.id", "test");
         props.put("enable.auto.commit", "true");
         props.put("auto.commit.interval.ms", "1000");
         props.put("session.timeout.ms", "30000");
-        props.put("key.deserializer",
-                "org.apache.kafka.common.serialization.StringDeserializer");
-        props.put("value.deserializer",
-                "org.apache.kafka.common.serialization.StringDeserializer");
+        props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        props.put("client.id", "SimpleConsumer");
 
-        KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props);
+        try (KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props)) {
+            consumer.subscribe(Arrays.asList(topicName));
+            System.out.println("Subscribed to topic " + topicName);
 
-        // Kafka Consumer va souscrire a la liste de topics ici
-        consumer.subscribe(Arrays.asList(topicName));
+            Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+                System.out.println("Shutting down consumer...");
+                consumer.close();
+            }));
 
-        // Afficher le nom du topic
-        System.out.println("Souscris au topic " + topicName);
-        int i = 0;
-
-        while (true) {
-            ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
-            for (ConsumerRecord<String, String> record : records)
-
-                // Afficher l'offset, clef et valeur des enregistrements du consommateur
-                System.out.printf("offset = %d, key = %s, value = %s\n",
-                        record.offset(), record.key(), record.value());
+            while (true) {
+                ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+                for (ConsumerRecord<String, String> record : records) {
+                    System.out.printf("offset = %d, key = %s, value = %s\n",
+                            record.offset(), record.key(), record.value());
+                }
+            }
         }
     }
 }
